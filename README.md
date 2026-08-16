@@ -51,8 +51,8 @@ Still working through the basics and testing what I learn in small scripts. My d
     <img height="170" src="https://github-stats-extended.vercel.app/api?username=gievano&amp;show_icons=true&amp;hide_border=true&amp;bg_color=FFFFFF&amp;title_color=111111&amp;text_color=111111&amp;icon_color=111111" alt="Gievano's GitHub statistics" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://wsrv.nl/?url=https%3A%2F%2Fgithub-stats-extended.vercel.app%2Fapi%2Ftop-langs%3Fusername%3Dgievano%26layout%3Dcompact%26hide_border%3Dtrue%26bg_color%3D0D1117%26title_color%3DFFFFFF%26text_color%3DFFFFFF&amp;filt=greyscale&amp;output=png&amp;maxage=1d" />
-    <img height="170" src="https://wsrv.nl/?url=https%3A%2F%2Fgithub-stats-extended.vercel.app%2Fapi%2Ftop-langs%3Fusername%3Dgievano%26layout%3Dcompact%26hide_border%3Dtrue%26bg_color%3DFFFFFF%26title_color%3D111111%26text_color%3D111111&amp;filt=greyscale&amp;output=png&amp;maxage=1d" alt="Languages used in Gievano's public repositories" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs?username=gievano&amp;layout=compact&amp;hide_border=true&amp;bg_color=0D1117&amp;title_color=FFFFFF&amp;text_color=FFFFFF" />
+    <img height="170" src="https://github-stats-extended.vercel.app/api/top-langs?username=gievano&amp;layout=compact&amp;hide_border=true&amp;bg_color=FFFFFF&amp;title_color=111111&amp;text_color=111111" alt="Languages used in Gievano's public repositories" />
   </picture>
 </p>
 
