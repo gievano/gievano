@@ -3,76 +3,199 @@
   <desc id="desc">A monochrome sketchbook-style banner for Gievano with the words code, create, repeat.</desc>
   <defs>
     <style>
-      .title {
-        animation: arrive 0.8s ease-out both;
+      .write-mask {
+        transform-box: fill-box;
+        transform-origin: left;
+        animation: reveal-title 8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+      }
+      .erase-mask {
+        transform-box: fill-box;
+        transform-origin: left;
+        animation: erase-title 8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+      }
+      .title-outline {
+        fill: none;
+        stroke: #111;
+        stroke-width: 1.7;
+        stroke-linejoin: round;
+        animation: sketch-title 8s ease-out infinite;
+      }
+      .title-fill {
+        animation: fill-title 8s ease-out infinite;
+      }
+      .pencil {
+        transform-box: view-box;
+        transform-origin: 0 0;
+        animation: move-pencil 8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+      }
+      .eraser {
+        transform-box: view-box;
+        transform-origin: 0 0;
+        animation: move-eraser 8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
       }
       .draw {
         stroke-dasharray: 460;
         stroke-dashoffset: 460;
-        animation: draw 1.4s ease-out 0.45s forwards;
+        animation: draw 8s ease-out infinite;
       }
-      .doodle-left {
+      .doodle-bolt,
+      .doodle-circle,
+      .doodle-plane,
+      .doodle-wave {
         transform-box: fill-box;
         transform-origin: center;
-        animation: tilt 4s cubic-bezier(0.22, 1, 0.36, 1) 1.2s infinite;
+        stroke-dasharray: 160;
+        stroke-dashoffset: 160;
       }
-      .doodle-right {
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: float 4.5s ease-in-out 0.8s infinite;
-      }
+      .doodle-bolt { animation: draw-doodle 0.75s ease-out 0.15s both, wiggle 3.2s cubic-bezier(0.22, 1, 0.36, 1) 1.1s infinite; }
+      .doodle-circle { animation: draw-doodle 0.75s ease-out 0.35s both, orbit 4.8s ease-in-out 1.3s infinite; }
+      .doodle-plane { animation: draw-doodle 0.75s ease-out 0.55s both, drift 5.2s ease-in-out 1.5s infinite; }
+      .doodle-wave { animation: draw-doodle 0.75s ease-out 0.75s both, wobble 3.8s ease-in-out 1.7s infinite; }
       .subtitle {
-        animation: fade 0.8s ease-out 1.1s both;
+        animation: fade 8s ease-out infinite;
       }
-      @keyframes arrive {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+      @keyframes reveal-title {
+        0%, 5% { transform: scaleX(0); }
+        10% { transform: scaleX(0.1667); }
+        15% { transform: scaleX(0.3333); }
+        20% { transform: scaleX(0.5); }
+        25% { transform: scaleX(0.6667); }
+        30% { transform: scaleX(0.8333); }
+        36%, 96% { transform: scaleX(1); }
+        100% { transform: scaleX(0); }
+      }
+      @keyframes erase-title {
+        0%, 72% { transform: scaleX(0); }
+        75% { transform: scaleX(0.1667); }
+        78% { transform: scaleX(0.3333); }
+        81% { transform: scaleX(0.5); }
+        84% { transform: scaleX(0.6667); }
+        87% { transform: scaleX(0.8333); }
+        90%, 96% { transform: scaleX(1); }
+        100% { transform: scaleX(0); }
+      }
+      @keyframes sketch-title {
+        0%, 5% { opacity: 0; }
+        6%, 36% { opacity: 0.9; }
+        44%, 100% { opacity: 0; }
+      }
+      @keyframes fill-title {
+        0%, 32% { opacity: 0; }
+        44%, 96% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      @keyframes move-pencil {
+        0%, 4% { opacity: 0; transform: translate(185px, 128px) rotate(-7deg); }
+        5% { opacity: 1; transform: translate(185px, 128px) rotate(-7deg); }
+        10% { opacity: 1; transform: translate(273px, 122px) rotate(-3deg); }
+        15% { opacity: 1; transform: translate(362px, 132px) rotate(-8deg); }
+        20% { opacity: 1; transform: translate(450px, 121px) rotate(-2deg); }
+        25% { opacity: 1; transform: translate(538px, 133px) rotate(-7deg); }
+        30% { opacity: 1; transform: translate(627px, 124px) rotate(-3deg); }
+        36% { opacity: 1; transform: translate(715px, 132px) rotate(-6deg); }
+        40%, 100% { opacity: 0; transform: translate(715px, 132px) rotate(-6deg); }
+      }
+      @keyframes move-eraser {
+        0%, 71% { opacity: 0; transform: translate(185px, 124px) rotate(-4deg); }
+        72% { opacity: 1; transform: translate(185px, 124px) rotate(-4deg); }
+        75% { opacity: 1; transform: translate(273px, 130px) rotate(2deg); }
+        78% { opacity: 1; transform: translate(362px, 122px) rotate(-3deg); }
+        81% { opacity: 1; transform: translate(450px, 130px) rotate(2deg); }
+        84% { opacity: 1; transform: translate(538px, 123px) rotate(-3deg); }
+        87% { opacity: 1; transform: translate(627px, 130px) rotate(1deg); }
+        90% { opacity: 1; transform: translate(715px, 125px) rotate(-3deg); }
+        93%, 100% { opacity: 0; transform: translate(715px, 125px) rotate(-3deg); }
       }
       @keyframes draw {
+        0%, 31% { opacity: 0; stroke-dashoffset: 460; }
+        35% { opacity: 1; }
+        48%, 96% { opacity: 1; stroke-dashoffset: 0; }
+        100% { opacity: 0; stroke-dashoffset: 0; }
+      }
+      @keyframes draw-doodle {
         to { stroke-dashoffset: 0; }
       }
-      @keyframes tilt {
-        0%, 100% { transform: rotate(0deg); }
-        50% { transform: rotate(-5deg); }
+      @keyframes wiggle {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        25% { transform: translateY(-2px) rotate(7deg); }
+        58% { transform: translateY(2px) rotate(-5deg); }
       }
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-5px); }
+      @keyframes orbit {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        28% { transform: translate(3px, -4px) scale(1.04); }
+        65% { transform: translate(-2px, 2px) scale(0.97); }
+      }
+      @keyframes drift {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(-6px, -7px) rotate(8deg); }
+      }
+      @keyframes wobble {
+        0%, 100% { transform: translateX(0) scaleX(1); }
+        35% { transform: translateX(4px) scaleX(0.96); }
+        70% { transform: translateX(-3px) scaleX(1.04); }
       }
       @keyframes fade {
-        from { opacity: 0; letter-spacing: 9px; }
-        to { opacity: 1; letter-spacing: 5px; }
+        0%, 42% { opacity: 0; letter-spacing: 9px; }
+        55%, 70% { opacity: 1; letter-spacing: 5px; }
+        78%, 100% { opacity: 0; letter-spacing: 5px; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .title, .draw, .doodle-left, .doodle-right, .subtitle { animation: none; }
+        .write-mask, .erase-mask, .title-outline, .title-fill, .pencil, .eraser,
+        .draw, .doodle-bolt, .doodle-circle, .doodle-plane,
+        .doodle-wave, .subtitle { animation: none; }
+        .write-mask { transform: scaleX(1); }
+        .erase-mask { transform: scaleX(0); }
+        .title-outline { opacity: 0; }
+        .title-fill { opacity: 1; }
+        .pencil, .eraser { opacity: 0; }
         .draw { stroke-dashoffset: 0; }
+        .doodle-bolt, .doodle-circle, .doodle-plane, .doodle-wave { stroke-dashoffset: 0; }
       }
     </style>
     <filter id="rough" x="-5%" y="-10%" width="110%" height="120%">
       <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="8" result="noise"/>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6"/>
     </filter>
-    <pattern id="paper" width="18" height="18" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="4" r="0.45" fill="#111" opacity="0.08"/>
-      <circle cx="13" cy="12" r="0.35" fill="#111" opacity="0.06"/>
+    <pattern id="paper" width="18" height="30" patternUnits="userSpaceOnUse">
+      <path class="notebook-line" d="M0 29.5 H18" stroke="#111" stroke-width="0.5" opacity="0.045"/>
+      <circle cx="2" cy="7" r="0.4" fill="#111" opacity="0.05"/>
+      <circle cx="13" cy="20" r="0.3" fill="#111" opacity="0.04"/>
     </pattern>
+    <mask id="title-write-mask">
+      <rect class="write-mask" x="185" y="78" width="530" height="106" fill="#fff"/>
+      <rect class="erase-mask" x="185" y="78" width="530" height="106" fill="#000"/>
+    </mask>
   </defs>
 
   <rect width="900" height="300" fill="#fff"/>
   <rect width="900" height="300" fill="url(#paper)"/>
+  <path class="notebook-margin" d="M68 0 V300" stroke="#111" stroke-width="1" opacity="0.07"/>
 
   <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
     <path d="M44 50 C170 37 303 44 428 40 S702 51 856 37" stroke-width="2" opacity="0.35"/>
     <path d="M53 252 C224 262 379 249 547 256 S746 247 847 258" stroke-width="2.5"/>
     <path d="M54 258 C239 267 407 254 568 262 S752 254 842 264" stroke-width="1" opacity="0.45"/>
-    <path class="doodle-left" d="M91 83 l-17 13 19 8 -13 17" stroke-width="2"/>
-    <path class="doodle-right" d="M811 79 c22 5 27 25 8 36 -18 10 -37 -9 -25 -27 9 -14 35 -9 38 8" stroke-width="2"/>
-    <path class="doodle-right" d="M787 210 l44 -16 -21 42 -5 -25z" stroke-width="2"/>
-    <path class="doodle-left" d="M114 211 q21 -17 39 1 t38 -1" stroke-width="2"/>
+    <path class="doodle-bolt" d="M91 83 l-17 13 19 8 -13 17" stroke-width="2"/>
+    <path class="doodle-circle" d="M811 79 c22 5 27 25 8 36 -18 10 -37 -9 -25 -27 9 -14 35 -9 38 8" stroke-width="2"/>
+    <path class="doodle-plane" d="M787 210 l44 -16 -21 42 -5 -25z" stroke-width="2"/>
+    <path class="doodle-wave" d="M114 211 q21 -17 39 1 t38 -1" stroke-width="2"/>
   </g>
 
-  <text class="title" x="450" y="167" text-anchor="middle" fill="#111" font-family="Arial Black, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="7">GIEVANO</text>
-  <path class="draw" d="M248 180 C351 191 536 187 651 177" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" filter="url(#rough)"/>
+  <g mask="url(#title-write-mask)" font-family="Arial Black, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="7" text-anchor="middle" filter="url(#rough)">
+    <text class="title-outline" x="450" y="167">GIEVANO</text>
+    <text class="title-fill" x="450" y="167" fill="#111">GIEVANO</text>
+  </g>
+  <g class="pencil" aria-hidden="true" stroke="#111" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+    <path d="M11 0 H42 V12 H11 L0 6 Z" fill="#fff" stroke-width="1.8"/>
+    <path class="pencil-tip" d="M0 6 L11 0 15 6 11 12 Z" fill="#d7d7d7" stroke-width="1.4"/>
+    <path d="M0 6 L4 4.2 4 7.8 Z" fill="#111" stroke="none"/>
+    <path d="M35 0 V12" fill="none" stroke-width="1.4"/>
+  </g>
+  <g class="eraser" aria-hidden="true" stroke="#111" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+    <path d="M3 1 H32 L39 7 33 15 H4 L0 10 Z" fill="#eee" stroke-width="1.8"/>
+    <path d="M24 1 L33 15" fill="none" stroke-width="1.2" opacity="0.55"/>
+  </g>
+  <path class="draw" mask="url(#title-write-mask)" d="M248 180 C351 191 536 187 651 177" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" filter="url(#rough)"/>
   <text class="subtitle" x="450" y="221" text-anchor="middle" fill="#111" font-family="Courier New, monospace" font-size="17" letter-spacing="5">CODE  /  CREATE  /  REPEAT</text>
 
   <g fill="#111" font-family="Courier New, monospace" font-size="12">
