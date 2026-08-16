@@ -192,8 +192,9 @@
     <path d="M35 0 V12" fill="none" stroke-width="1.4"/>
   </g>
   <g class="eraser" aria-hidden="true" stroke="#111" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
-    <path d="M3 1 H32 L39 7 33 15 H4 L0 10 Z" fill="#eee" stroke-width="1.8"/>
-    <path d="M24 1 L33 15" fill="none" stroke-width="1.2" opacity="0.55"/>
+    <path d="M0 1 H31 L39 7 33 15 H0 Z" fill="#eee" stroke-width="1.8"/>
+    <path class="eraser-pad" d="M0 1 H13 L14 15 H0 Z" fill="#d7d7d7" stroke="none"/>
+    <path d="M13 1 L14 15" fill="none" stroke-width="1.2" opacity="0.55"/>
   </g>
   <path class="draw" mask="url(#title-write-mask)" d="M248 180 C351 191 536 187 651 177" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" filter="url(#rough)"/>
   <text class="subtitle" x="450" y="221" text-anchor="middle" fill="#111" font-family="Courier New, monospace" font-size="17" letter-spacing="5">CODE  /  CREATE  /  REPEAT</text>

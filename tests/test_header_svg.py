@@ -141,6 +141,16 @@ class HeaderAnimationTest(unittest.TestCase):
         self.assertGreaterEqual(len(eraser_steps), 6)
         self.assertEqual(eraser_steps, erase_steps)
 
+    def test_eraser_pad_is_on_the_left_leading_edge(self):
+        pads = [
+            element
+            for element in self.root.iter()
+            if element.get("class") == "eraser-pad"
+        ]
+
+        self.assertEqual(len(pads), 1)
+        self.assertTrue(pads[0].get("d").startswith("M0 "))
+
     def test_banner_has_subtle_notebook_rules(self):
         classes = {element.get("class") for element in self.root.iter()}
 
