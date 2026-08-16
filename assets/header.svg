@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+  <title id="title">Gievano</title>
+  <desc id="desc">A monochrome sketchbook-style banner for Gievano with the words code, create, repeat.</desc>
+  <defs>
+    <style>
+      .title {
+        animation: arrive 0.8s ease-out both;
+      }
+      .draw {
+        stroke-dasharray: 460;
+        stroke-dashoffset: 460;
+        animation: draw 1.4s ease-out 0.45s forwards;
+      }
+      .doodle-left {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: tilt 4s cubic-bezier(0.22, 1, 0.36, 1) 1.2s infinite;
+      }
+      .doodle-right {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: float 4.5s ease-in-out 0.8s infinite;
+      }
+      .subtitle {
+        animation: fade 0.8s ease-out 1.1s both;
+      }
+      @keyframes arrive {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes draw {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes tilt {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-5deg); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      @keyframes fade {
+        from { opacity: 0; letter-spacing: 9px; }
+        to { opacity: 1; letter-spacing: 5px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .title, .draw, .doodle-left, .doodle-right, .subtitle { animation: none; }
+        .draw { stroke-dashoffset: 0; }
+      }
+    </style>
+    <filter id="rough" x="-5%" y="-10%" width="110%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="8" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6"/>
+    </filter>
+    <pattern id="paper" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="4" r="0.45" fill="#111" opacity="0.08"/>
+      <circle cx="13" cy="12" r="0.35" fill="#111" opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="300" fill="#fff"/>
+  <rect width="900" height="300" fill="url(#paper)"/>
+
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+    <path d="M44 50 C170 37 303 44 428 40 S702 51 856 37" stroke-width="2" opacity="0.35"/>
+    <path d="M53 252 C224 262 379 249 547 256 S746 247 847 258" stroke-width="2.5"/>
+    <path d="M54 258 C239 267 407 254 568 262 S752 254 842 264" stroke-width="1" opacity="0.45"/>
+    <path class="doodle-left" d="M91 83 l-17 13 19 8 -13 17" stroke-width="2"/>
+    <path class="doodle-right" d="M811 79 c22 5 27 25 8 36 -18 10 -37 -9 -25 -27 9 -14 35 -9 38 8" stroke-width="2"/>
+    <path class="doodle-right" d="M787 210 l44 -16 -21 42 -5 -25z" stroke-width="2"/>
+    <path class="doodle-left" d="M114 211 q21 -17 39 1 t38 -1" stroke-width="2"/>
+  </g>
+
+  <text class="title" x="450" y="167" text-anchor="middle" fill="#111" font-family="Arial Black, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="7">GIEVANO</text>
+  <path class="draw" d="M248 180 C351 191 536 187 651 177" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" filter="url(#rough)"/>
+  <text class="subtitle" x="450" y="221" text-anchor="middle" fill="#111" font-family="Courier New, monospace" font-size="17" letter-spacing="5">CODE  /  CREATE  /  REPEAT</text>
+
+  <g fill="#111" font-family="Courier New, monospace" font-size="12">
+    <text x="54" y="284">01 / WORK IN PROGRESS</text>
+    <text x="846" y="284" text-anchor="end">JKT, ID</text>
+  </g>
+</svg>
