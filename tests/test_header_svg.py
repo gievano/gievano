@@ -151,6 +151,17 @@ class HeaderAnimationTest(unittest.TestCase):
         self.assertEqual(len(pads), 1)
         self.assertTrue(pads[0].get("d").startswith("M0 "))
 
+    def test_eraser_uses_a_rectangular_block_body(self):
+        bodies = [
+            element
+            for element in self.root.iter()
+            if element.get("class") == "eraser-body"
+        ]
+
+        self.assertEqual(len(bodies), 1)
+        self.assertTrue(bodies[0].tag.endswith("rect"))
+        self.assertGreater(float(bodies[0].get("width")), float(bodies[0].get("height")))
+
     def test_banner_has_subtle_notebook_rules(self):
         classes = {element.get("class") for element in self.root.iter()}
 
