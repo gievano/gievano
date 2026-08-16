@@ -2,3 +2,4 @@ docs/
 cross-cutting-principles.md
 skill-observations/
 tests/__pycache__/
+tests/
