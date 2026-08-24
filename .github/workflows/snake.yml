@@ -1,4 +1,4 @@
-name: Generate Snake
+name: Refresh Profile Assets
 
 on:
   schedule:
@@ -9,12 +9,25 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - uses: Platane/snk@v3
         with:
           github_user_name: gievano
           outputs: |
             dist/snake.svg?palette=github-light&color_snake=#111111&color_dots=#ebedf0,#d0d7de,#afb8c1,#8c959f,#57606a
             dist/snake-dark.svg?palette=github-dark&color_snake=#ffffff&color_dots=#161b22,#30363d,#484f58,#6e7681,#b1bac4
+
+      - name: Grow snake after each contribution
+        run: node scripts/grow-snake.mjs dist/snake.svg dist/snake-dark.svg
+
+      - name: Refresh monochrome language cards
+        run: |
+          curl --fail --retry 3 --output dist/languages.svg 'https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=gievano&theme=default&title_color=111111&text_color=555555&bg_color=FFFFFF&border_color=D0D0D0&icon_color=111111'
+          curl --fail --retry 3 --output dist/languages-dark.svg 'https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=gievano&theme=github_dark&title_color=FFFFFF&text_color=AAAAAA&bg_color=0D1117&border_color=3D444D&icon_color=FFFFFF'
+          node scripts/mono-language-card.mjs light dist/languages.svg
+          node scripts/mono-language-card.mjs dark dist/languages-dark.svg
+
       - uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output

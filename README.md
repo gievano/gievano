@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/header.svg" alt="Gievano, design-trained and code-curious" width="100%" />
+  <img src="./assets/header.svg" alt="Gievano, visual design, code, and systems" width="100%" />
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=16&amp;duration=2500&amp;pause=600&amp;color=111111&amp;center=true&amp;vCenter=true&amp;random=false&amp;width=600&amp;lines=fresh+grad+%2F+design-trained+%2F+code-curious;3+years+building+minecraft+servers;small+scripts+and+tools+I+actually+use;visual+design+still+shows+in+the+details" alt="A rotating introduction to Gievano" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=16&amp;duration=2500&amp;pause=600&amp;color=111111&amp;center=true&amp;vCenter=true&amp;random=false&amp;width=600&amp;lines=fresh+grad+%2F+visual+design+to+code;3+years+building+minecraft+servers;small+scripts+and+tools+I+actually+use;visual+design+still+shows+in+the+details" alt="A rotating introduction to Gievano" />
 </p>
 
 ## hey, i'm gievano.
@@ -37,8 +37,8 @@ workflow     sketch, build, refine
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com?user=gievano&amp;theme=tokyonight-duo&amp;hide_border=true&amp;background=0D1117&amp;ring=FFFFFF&amp;fire=FFFFFF&amp;currStreakLabel=FFFFFF&amp;sideLabels=AAAAAA&amp;dates=666666&amp;font=Fira+Code" />
-    <img src="https://github-readme-streak-stats.herokuapp.com?user=gievano&amp;theme=default&amp;hide_border=true&amp;ring=111111&amp;fire=111111&amp;currStreakLabel=111111&amp;sideLabels=555555&amp;dates=888888&amp;font=Fira+Code" alt="Gievano's GitHub streak" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com?user=gievano&amp;hide_border=true&amp;background=0D1117&amp;stroke=555555&amp;ring=FFFFFF&amp;fire=FFFFFF&amp;currStreakNum=FFFFFF&amp;sideNums=FFFFFF&amp;currStreakLabel=FFFFFF&amp;sideLabels=AAAAAA&amp;dates=666666&amp;font=Fira+Code" />
+    <img src="https://github-readme-streak-stats.herokuapp.com?user=gievano&amp;hide_border=true&amp;background=FFFFFF&amp;stroke=BBBBBB&amp;ring=111111&amp;fire=111111&amp;currStreakNum=111111&amp;sideNums=111111&amp;currStreakLabel=111111&amp;sideLabels=555555&amp;dates=888888&amp;font=Fira+Code" alt="Gievano's GitHub streak" />
   </picture>
 </p>
 
@@ -46,16 +46,16 @@ workflow     sketch, build, refine
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gievano&amp;theme=github_dark" />
-    <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gievano&amp;theme=default" alt="Gievano's GitHub statistics" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gievano&amp;theme=github_dark&amp;title_color=FFFFFF&amp;text_color=AAAAAA&amp;bg_color=0D1117&amp;border_color=3D444D&amp;icon_color=FFFFFF&amp;chart_color=FFFFFF" />
+    <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gievano&amp;theme=default&amp;title_color=111111&amp;text_color=555555&amp;bg_color=FFFFFF&amp;border_color=D0D0D0&amp;icon_color=111111&amp;chart_color=111111" alt="Gievano's GitHub statistics" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=gievano&amp;theme=github_dark" />
-    <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=gievano&amp;theme=default" alt="Languages used in Gievano's public repositories" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gievano/gievano/output/languages-dark.svg" />
+    <img height="170" src="https://raw.githubusercontent.com/gievano/gievano/output/languages.svg" alt="Top languages by repository, refreshed daily from Gievano's public repositories" />
   </picture>
 </p>
 
-<sub>Language percentages come from public repositories. They don't measure skill.</sub>
+<sub>Language data refreshes from public repositories and is not a skill ranking.</sub>
 
 ### contributions
 
