@@ -9,7 +9,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: Platane/snk@v3
         with:
@@ -19,7 +19,9 @@ jobs:
             dist/snake-dark.svg?palette=github-dark&color_snake=#ffffff&color_dots=#161b22,#30363d,#484f58,#6e7681,#b1bac4
 
       - name: Grow snake after each contribution
-        run: node scripts/grow-snake.mjs dist/snake.svg dist/snake-dark.svg
+        run: |
+          sudo chown -R "$(id -u):$(id -g)" dist
+          node scripts/grow-snake.mjs dist/snake.svg dist/snake-dark.svg
 
       - name: Refresh monochrome language cards
         run: |
