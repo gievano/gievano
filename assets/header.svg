@@ -19,17 +19,17 @@
       .sheet-line { fill: none; stroke: var(--sheet-ink); stroke-linecap: round; stroke-linejoin: round; }
       .muted { fill: var(--muted); }
       .marker {
-        --draw-delay: 1.35s;
+        --draw-delay: 3.75s;
+        --draw-duration: 1.25s;
+      }
+      .smoke-line {
+        --draw-delay: 3.55s;
+        --draw-duration: 1.45s;
       }
       .cutout {
         transform-box: fill-box;
         transform-origin: center;
         animation: paste-in .7s cubic-bezier(.22, 1, .36, 1) both;
-      }
-      .drift {
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: paper-drift 7s ease-in-out 2.6s infinite alternate;
       }
       .title-wipe { animation: wipe-title .9s cubic-bezier(.65, 0, .35, 1) .72s both; }
       .guide-wipe { animation: wipe-guide .7s cubic-bezier(.65, 0, .35, 1) .5s both; }
@@ -47,7 +47,7 @@
       .draw-path {
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
-        animation: draw-path 1s cubic-bezier(.65, 0, .35, 1) var(--draw-delay, 1.7s) both;
+        animation: draw-path var(--draw-duration, 1s) cubic-bezier(.65, 0, .35, 1) var(--draw-delay, 1.7s) both;
       }
       .arrow-right { --draw-delay: 1.9s; }
       .squiggle { --draw-delay: 2.05s; }
@@ -58,6 +58,22 @@
       .note-right { --note-delay: 2.2s; }
       .footer-note { opacity: 0; animation: reveal-copy .55s ease-out 2.15s both; }
       .halftone { animation: breathe 5s ease-in-out 2.4s infinite alternate; }
+      .paper-plane {
+        opacity: 0;
+      }
+      .plane-body {
+        fill: var(--paper);
+        stroke: var(--ink);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .plane-fold {
+        fill: none;
+        stroke: var(--ink);
+        stroke-width: 1;
+        stroke-linecap: round;
+      }
       @keyframes paste-in {
         from { opacity: 0; transform: translateY(-12px) rotate(-.7deg) scale(.985); }
         to { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
@@ -77,10 +93,6 @@
         from { opacity: .55; }
         to { opacity: 1; }
       }
-      @keyframes paper-drift {
-        from { transform: translate(-1px, 1px) rotate(-.12deg); }
-        to { transform: translate(1px, -1px) rotate(.12deg); }
-      }
       @keyframes tape-flutter {
         from { transform: rotate(-.35deg) translateY(0); }
         to { transform: rotate(.35deg) translateY(-1px); }
@@ -95,17 +107,21 @@
         }
       }
       @media (prefers-reduced-motion: reduce) {
-        .marker, .cutout, .drift, .title-wipe, .guide-wipe, .sheet-copy, .tape-left, .tape-right, .draw-path, .note, .footer-note, .halftone { animation: none; }
+        .marker, .cutout, .title-wipe, .guide-wipe, .sheet-copy, .tape-left, .tape-right, .draw-path, .note, .footer-note, .halftone, .paper-plane { animation: none; }
         .title-wipe { width: 545px; }
         .guide-wipe { width: 510px; }
         .draw-path { stroke-dashoffset: 0; }
         .sheet-copy, .note, .footer-note { opacity: 1; }
+        .paper-plane { display: none; }
       }
     </style>
 
     <filter id="rough" x="-4%" y="-8%" width="108%" height="116%">
       <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="24" result="noise"/>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8"/>
+    </filter>
+    <filter id="smoke" x="-4%" y="-120%" width="108%" height="340%">
+      <feGaussianBlur stdDeviation="1.8"/>
     </filter>
     <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="1.15" class="ink-fill" opacity="0.16"/>
@@ -152,10 +168,18 @@
       <text class="sheet-copy subtitle" x="451" y="197" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="3">VISUAL DESIGN / CODE &amp; SYSTEMS</text>
     </g>
 
-    <path class="sheet-line marker draw-path" pathLength="1" d="M236 177 C340 187 526 187 665 174" stroke-width="5" filter="url(#rough)"/>
+    <path class="sheet-line smoke-line draw-path" pathLength="1" d="M236 177 C340 187 526 187 665 174" stroke-width="5" opacity="0.16" filter="url(#smoke)"/>
+    <path class="sheet-line marker draw-path" pathLength="1" d="M236 177 C340 187 526 187 665 174" stroke-width="1.5"/>
     <path class="sheet-line" clip-path="url(#guide-reveal)" d="M207 103 L698 103" stroke-width="0.8" stroke-dasharray="3 7" opacity="0.42"/>
   </g>
   </g>
+  </g>
+
+  <g class="paper-plane" aria-hidden="true">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.9;1" begin=".75s" dur="2.8s" fill="freeze"/>
+    <animateMotion path="M18 48 C150 12 320 92 450 212 C585 272 735 120 904 42" rotate="auto" begin=".75s" dur="2.8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .2 1"/>
+    <path class="plane-body" d="M0 0 L24 7 8 12 5 21 0 0 Z"/>
+    <path class="plane-fold" d="M8 12 L24 7 5 21 M8 12 L12 17"/>
   </g>
 
   <g class="ink-line" stroke-width="1.2" opacity="0.7">
