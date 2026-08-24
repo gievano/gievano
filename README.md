@@ -10,9 +10,10 @@
 ╚════════════════════════════════════════════╝
 ```
 
-<a href="https://git.io/typing-svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=14&duration=2500&pause=800&color=FFFFFF&center=true&vCenter=true&random=false&width=500&lines=fresh+grad+%2F+self-taught+dev;3+years+building+minecraft+servers;now+making+things+I+actually+use;design+background+sneaks+in+anyway" />
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=14&duration=2500&pause=800&color=000000&center=true&vCenter=true&random=false&width=500&lines=fresh+grad+%2F+self-taught+dev;3+years+building+minecraft+servers;now+making+things+I+actually+use;design+background+sneaks+in+anyway" alt="Typing SVG" />
-</a>
+</picture>
 
 <br>
 
@@ -61,43 +62,41 @@ map-voice    →  roblox project, gameplay systems in Luau
 
 <br>
 
-### streak
-
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com?user=gievano&theme=dark&hide_border=true&background=000000&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=888888&dates=666666&font=Fira+Code" />
-    <img src="https://github-readme-streak-stats.herokuapp.com?user=gievano&theme=default&hide_border=true&background=FFFFFF&ring=000000&fire=000000&currStreakLabel=000000&sideLabels=444444&dates=888888&font=Fira+Code" alt="Gievano's GitHub streak" />
-  </picture>
-</p>
-
-### profile
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=gievano&show_icons=true&hide_border=true&bg_color=000000&title_color=FFFFFF&text_color=888888&icon_color=FFFFFF" />
-    <img height="170" src="https://github-readme-stats.vercel.app/api?username=gievano&show_icons=true&hide_border=true&bg_color=FFFFFF&title_color=000000&text_color=444444&icon_color=000000" alt="Gievano's GitHub statistics" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=gievano&layout=compact&hide_border=true&bg_color=000000&title_color=FFFFFF&text_color=888888" />
-    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs?username=gievano&layout=compact&hide_border=true&bg_color=FFFFFF&title_color=000000&text_color=444444" alt="Languages used" />
-  </picture>
-</p>
-
-<sub>language percentages come from public repos. they don't measure skill.</sub>
-
-### contributions
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gievano&bg_color=000000&color=FFFFFF&line=FFFFFF&point=FFFFFF&area_color=333333&hide_border=true&custom_title=contributions" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=gievano&bg_color=FFFFFF&color=000000&line=000000&point=000000&area_color=eeeeee&hide_border=true&custom_title=contributions" alt="contribution graph" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com?user=gievano&hide_border=true&background=000000&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=888888&dates=555555&currStreakNum=FFFFFF&sideNums=AAAAAA&font=Fira+Code" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=gievano&hide_border=true&background=FFFFFF&ring=000000&fire=000000&currStreakLabel=000000&sideLabels=555555&dates=999999&currStreakNum=000000&sideNums=333333&font=Fira+Code" alt="streak" />
 </picture>
 
-### snake
+</p>
+
+<p align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=gievano&show_icons=true&hide_border=true&bg_color=000000&title_color=FFFFFF&text_color=888888&icon_color=FFFFFF&ring_color=FFFFFF" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=gievano&show_icons=true&hide_border=true&bg_color=FFFFFF&title_color=000000&text_color=555555&icon_color=000000" alt="stats" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=gievano&layout=compact&hide_border=true&bg_color=000000&title_color=FFFFFF&text_color=888888" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs?username=gievano&layout=compact&hide_border=true&bg_color=FFFFFF&title_color=000000&text_color=555555" alt="languages" />
+</picture>
+
+</p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gievano&bg_color=000000&color=FFFFFF&line=FFFFFF&point=FFFFFF&area_color=222222&area=true&hide_border=true&custom_title=contributions" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=gievano&bg_color=FFFFFF&color=000000&line=000000&point=000000&area_color=eeeeee&area=true&hide_border=true&custom_title=contributions" alt="contribution graph" />
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gievano/gievano/output/snake-dark.svg" />
-  <img src="https://raw.githubusercontent.com/gievano/gievano/output/snake.svg" alt="Snake animation" />
+  <img src="https://raw.githubusercontent.com/gievano/gievano/output/snake.svg" alt="snake" />
 </picture>
+
+<br>
+<sub>language percentages come from public repos. they don't measure skill.</sub>
 
 </details>
 
