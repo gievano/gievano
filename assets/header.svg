@@ -19,47 +19,56 @@
       .sheet-line { fill: none; stroke: var(--sheet-ink); stroke-linecap: round; stroke-linejoin: round; }
       .muted { fill: var(--muted); }
       .marker {
-        stroke-dasharray: 470;
-        stroke-dashoffset: 470;
-        animation: mark 6s cubic-bezier(.7, 0, .25, 1) infinite;
+        --draw-delay: 1.35s;
       }
       .cutout {
         transform-box: fill-box;
         transform-origin: center;
-        animation: paste-in .8s cubic-bezier(.2, .8, .2, 1) both;
+        animation: paste-in .7s cubic-bezier(.22, 1, .36, 1) both;
       }
       .drift {
         transform-box: fill-box;
         transform-origin: center;
-        animation: paper-drift 6s ease-in-out 1s infinite alternate;
+        animation: paper-drift 7s ease-in-out 2.6s infinite alternate;
       }
-      .title-main { animation: print-jitter 3.2s steps(1, end) 1.4s infinite; }
+      .title-wipe { animation: wipe-title .9s cubic-bezier(.65, 0, .35, 1) .72s both; }
+      .guide-wipe { animation: wipe-guide .7s cubic-bezier(.65, 0, .35, 1) .5s both; }
+      .sheet-copy {
+        opacity: 0;
+        animation: reveal-copy .5s ease-out var(--copy-delay, .45s) both;
+      }
+      .subtitle { --copy-delay: 1.5s; }
       .tape-left, .tape-right {
         transform-box: fill-box;
         transform-origin: center;
-        animation: tape-flutter 4.5s ease-in-out 1s infinite alternate;
+        animation: tape-flutter 5s ease-in-out 2.5s infinite alternate;
       }
-      .tape-right { animation-delay: 1.7s; animation-direction: alternate-reverse; }
-      .arrow {
-        stroke-dasharray: 150;
-        stroke-dashoffset: 150;
-        animation: draw-arrow 1s ease-out .55s both;
+      .tape-right { animation-delay: 3s; animation-direction: alternate-reverse; }
+      .draw-path {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        animation: draw-path 1s cubic-bezier(.65, 0, .35, 1) var(--draw-delay, 1.7s) both;
       }
+      .arrow-right { --draw-delay: 1.9s; }
+      .squiggle { --draw-delay: 2.05s; }
       .note {
         opacity: 0;
-        animation: note-in .45s ease-out 1.25s both;
+        animation: note-in .5s ease-out var(--note-delay, 2s) both;
       }
-      .halftone { animation: breathe 4s ease-in-out infinite alternate; }
-      .squiggle {
-        stroke-dasharray: 150;
-        stroke-dashoffset: 150;
-        animation: draw-arrow 1.2s ease-out 1.55s both;
-      }
+      .note-right { --note-delay: 2.2s; }
+      .footer-note { opacity: 0; animation: reveal-copy .55s ease-out 2.15s both; }
+      .halftone { animation: breathe 5s ease-in-out 2.4s infinite alternate; }
       @keyframes paste-in {
-        from { opacity: 0; transform: translateY(-18px) rotate(-1.5deg) scale(.97); }
+        from { opacity: 0; transform: translateY(-12px) rotate(-.7deg) scale(.985); }
         to { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
       }
-      @keyframes draw-arrow { to { stroke-dashoffset: 0; } }
+      @keyframes draw-path { to { stroke-dashoffset: 0; } }
+      @keyframes wipe-title { from { width: 0; } to { width: 545px; } }
+      @keyframes wipe-guide { from { width: 0; } to { width: 510px; } }
+      @keyframes reveal-copy {
+        from { opacity: 0; transform: translateX(-6px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
       @keyframes note-in {
         from { opacity: 0; transform: translateY(5px); }
         to { opacity: 1; transform: translateY(0); }
@@ -72,21 +81,9 @@
         from { transform: translate(-1px, 1px) rotate(-.12deg); }
         to { transform: translate(1px, -1px) rotate(.12deg); }
       }
-      @keyframes print-jitter {
-        0%, 91%, 100% { transform: translate(0); }
-        92% { transform: translate(1px, -1px); }
-        94% { transform: translate(-1px, 1px); }
-        96% { transform: translate(1px, 0); }
-      }
       @keyframes tape-flutter {
         from { transform: rotate(-.35deg) translateY(0); }
         to { transform: rotate(.35deg) translateY(-1px); }
-      }
-      @keyframes mark {
-        0%, 12% { stroke-dashoffset: 470; opacity: 0; }
-        16% { opacity: 1; }
-        48%, 88% { stroke-dashoffset: 0; opacity: 1; }
-        100% { stroke-dashoffset: 0; opacity: 0; }
       }
       @media (prefers-color-scheme: dark) {
         :root {
@@ -98,9 +95,11 @@
         }
       }
       @media (prefers-reduced-motion: reduce) {
-        .marker, .cutout, .drift, .title-main, .tape-left, .tape-right, .arrow, .note, .halftone, .squiggle { animation: none; }
-        .marker, .arrow, .squiggle { stroke-dashoffset: 0; opacity: 1; }
-        .note { opacity: 1; }
+        .marker, .cutout, .drift, .title-wipe, .guide-wipe, .sheet-copy, .tape-left, .tape-right, .draw-path, .note, .footer-note, .halftone { animation: none; }
+        .title-wipe { width: 545px; }
+        .guide-wipe { width: 510px; }
+        .draw-path { stroke-dashoffset: 0; }
+        .sheet-copy, .note, .footer-note { opacity: 1; }
       }
     </style>
 
@@ -114,6 +113,12 @@
     <pattern id="copy-lines" width="6" height="6" patternUnits="userSpaceOnUse">
       <path d="M0 1 H6 M0 4 H6" class="sheet-line" stroke-width="0.45" opacity="0.13"/>
     </pattern>
+    <clipPath id="title-reveal">
+      <rect class="title-wipe" x="178" y="99" width="0" height="78"/>
+    </clipPath>
+    <clipPath id="guide-reveal">
+      <rect class="guide-wipe" x="200" y="94" width="0" height="18"/>
+    </clipPath>
   </defs>
 
   <rect class="paper" width="900" height="300"/>
@@ -126,12 +131,12 @@
   </g>
 
   <g class="ink-line" stroke-width="1.5" opacity="0.78">
-    <path class="arrow" d="M58 111 C87 96 119 93 164 101 M155 95 L165 101 153 105"/>
-    <path class="arrow" d="M744 186 C784 188 810 180 835 160 M829 158 L836 159 835 167"/>
+    <path class="draw-path" pathLength="1" d="M58 111 C87 96 119 93 164 101 M155 95 L165 101 153 105"/>
+    <path class="draw-path arrow-right" pathLength="1" d="M744 186 C784 188 810 180 835 160 M829 158 L836 159 835 167"/>
   </g>
   <g class="muted" font-family="Courier New, monospace" font-size="11" font-weight="700" letter-spacing="1.4">
     <g class="note"><text x="31" y="126" transform="rotate(-6 31 126)">VISUAL DESIGN</text></g>
-    <g class="note"><text x="779" y="143" transform="rotate(5 779 143)">SMALL TOOLS</text></g>
+    <g class="note note-right"><text x="779" y="143" transform="rotate(5 779 143)">SMALL TOOLS</text></g>
   </g>
 
   <g class="cutout">
@@ -141,14 +146,14 @@
     <path d="M178 68 L730 65 731 211 174 208 Z" fill="url(#copy-lines)" opacity="0.65"/>
 
     <g class="sheet-ink" font-family="Courier New, monospace">
-      <text x="194" y="87" font-size="10" font-weight="700" letter-spacing="2">FIELD NOTE / GVN</text>
-      <text x="708" y="87" text-anchor="end" font-size="10" font-weight="700" letter-spacing="2">DRAW + DEBUG</text>
-      <text class="title-main" x="451" y="166" text-anchor="middle" font-family="Arial Black, Impact, Arial, sans-serif" font-size="83" font-weight="900" letter-spacing="5">GIEVANO</text>
-      <text x="451" y="197" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="3">VISUAL DESIGN / CODE &amp; SYSTEMS</text>
+      <text class="sheet-copy" x="194" y="87" font-size="10" font-weight="700" letter-spacing="2">FIELD NOTE / GVN</text>
+      <text class="sheet-copy" x="708" y="87" text-anchor="end" font-size="10" font-weight="700" letter-spacing="2">DRAW + DEBUG</text>
+      <text x="451" y="166" text-anchor="middle" clip-path="url(#title-reveal)" font-family="Arial Black, Impact, Arial, sans-serif" font-size="83" font-weight="900" letter-spacing="5">GIEVANO</text>
+      <text class="sheet-copy subtitle" x="451" y="197" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="3">VISUAL DESIGN / CODE &amp; SYSTEMS</text>
     </g>
 
-    <path class="sheet-line marker" d="M236 177 C340 187 526 187 665 174" stroke-width="5" filter="url(#rough)"/>
-    <path class="sheet-line" d="M207 103 L698 103" stroke-width="0.8" stroke-dasharray="3 7" opacity="0.42"/>
+    <path class="sheet-line marker draw-path" pathLength="1" d="M236 177 C340 187 526 187 665 174" stroke-width="5" filter="url(#rough)"/>
+    <path class="sheet-line" clip-path="url(#guide-reveal)" d="M207 103 L698 103" stroke-width="0.8" stroke-dasharray="3 7" opacity="0.42"/>
   </g>
   </g>
   </g>
@@ -156,10 +161,10 @@
   <g class="ink-line" stroke-width="1.2" opacity="0.7">
     <path class="tape-left" d="M180 47 l22 -13 30 5 -7 20"/>
     <path class="tape-right" d="M671 226 l8 18 31 -6 8 -19"/>
-    <path class="squiggle" d="M42 247 c24 -13 45 14 68 -2 s44 10 65 -1"/>
+    <path class="draw-path squiggle" pathLength="1" d="M42 247 c24 -13 45 14 68 -2 s44 10 65 -1"/>
   </g>
 
-  <g font-family="Courier New, monospace" font-weight="700">
+  <g class="footer-note" font-family="Courier New, monospace" font-weight="700">
     <text class="ink-fill" x="31" y="277" font-size="12" letter-spacing="2.4">SKETCH / BUILD / REFINE</text>
     <text class="muted" x="872" y="277" text-anchor="end" font-size="10" letter-spacing="1.8">USEFUL THINGS, ROUGH EDGES.</text>
   </g>
