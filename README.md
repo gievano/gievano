@@ -11,6 +11,10 @@
 
 ## hey, i'm gievano.
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=1000&color=111111&center=true&vCenter=true&width=435&lines=learning+python+fundamentals;building+small+things+I+actually+use;vibecoding%2C+then+figuring+out+why+it+works" alt="Typing SVG" />
+</p>
+
 I learn by building small things I actually want to use. They usually start out messy, so I use AI to get a rough version running, then poke through the code until it makes sense to me.
 
 ```text
@@ -31,15 +35,15 @@ Still working through the basics and testing what I learn in small scripts. My d
 - [`luap-snake`](https://github.com/gievano/luap-snake) — Snake in one HTML file, with five visual worlds.
 - [`map-voice`](https://github.com/gievano/map-voice) — A Roblox project where I build and test gameplay systems in Luau.
 
-<details open>
+<details>
 <summary><strong>stats &amp; activity</strong></summary>
 
 ### streak
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=gievano&amp;theme=dark&amp;hide_border=true&amp;ring=FFFFFF&amp;fire=FFFFFF&amp;currStreakLabel=FFFFFF" />
-    <img src="https://streak-stats.demolab.com?user=gievano&amp;theme=default&amp;hide_border=true&amp;ring=111111&amp;fire=111111&amp;currStreakLabel=111111" alt="Gievano's GitHub streak" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com?user=gievano&amp;theme=dark&amp;hide_border=true&amp;ring=FFFFFF&amp;fire=FFFFFF&amp;currStreakLabel=FFFFFF" />
+    <img src="https://github-readme-streak-stats.herokuapp.com?user=gievano&amp;theme=default&amp;hide_border=true&amp;ring=111111&amp;fire=111111&amp;currStreakLabel=111111" alt="Gievano's GitHub streak" />
   </picture>
 </p>
 
@@ -47,12 +51,12 @@ Still working through the basics and testing what I learn in small scripts. My d
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=gievano&amp;show_icons=true&amp;hide_border=true&amp;bg_color=0D1117&amp;title_color=FFFFFF&amp;text_color=FFFFFF&amp;icon_color=FFFFFF" />
-    <img height="170" src="https://github-stats-extended.vercel.app/api?username=gievano&amp;show_icons=true&amp;hide_border=true&amp;bg_color=FFFFFF&amp;title_color=111111&amp;text_color=111111&amp;icon_color=111111" alt="Gievano's GitHub statistics" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=gievano&amp;show_icons=true&amp;hide_border=true&amp;bg_color=0D1117&amp;title_color=FFFFFF&amp;text_color=FFFFFF&amp;icon_color=FFFFFF" />
+    <img height="170" src="https://github-readme-stats.vercel.app/api?username=gievano&amp;show_icons=true&amp;hide_border=true&amp;bg_color=FFFFFF&amp;title_color=111111&amp;text_color=111111&amp;icon_color=111111" alt="Gievano's GitHub statistics" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs?username=gievano&amp;layout=compact&amp;hide_border=true&amp;bg_color=0D1117&amp;title_color=FFFFFF&amp;text_color=FFFFFF" />
-    <img height="170" src="https://github-stats-extended.vercel.app/api/top-langs?username=gievano&amp;layout=compact&amp;hide_border=true&amp;bg_color=FFFFFF&amp;title_color=111111&amp;text_color=111111" alt="Languages used in Gievano's public repositories" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=gievano&amp;layout=compact&amp;hide_border=true&amp;bg_color=0D1117&amp;title_color=FFFFFF&amp;text_color=FFFFFF" />
+    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs?username=gievano&amp;layout=compact&amp;hide_border=true&amp;bg_color=FFFFFF&amp;title_color=111111&amp;text_color=111111" alt="Languages used in Gievano's public repositories" />
   </picture>
 </p>
 
@@ -63,6 +67,11 @@ Still working through the basics and testing what I learn in small scripts. My d
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gievano&amp;bg_color=0D1117&amp;color=FFFFFF&amp;line=FFFFFF&amp;point=FFFFFF&amp;area_color=FFFFFF&amp;hide_border=true&amp;custom_title=Gievano%27s%20Contribution%20Graph" />
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=gievano&amp;bg_color=FFFFFF&amp;color=111111&amp;line=111111&amp;point=111111&amp;area_color=111111&amp;hide_border=true&amp;custom_title=Gievano%27s%20Contribution%20Graph" alt="Gievano's contribution graph" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gievano/gievano/output/snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/gievano/gievano/output/snake.svg" alt="Snake animation" />
 </picture>
 
 </details>
