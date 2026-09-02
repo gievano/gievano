@@ -20,15 +20,15 @@ Fresh graduate, 18. Started in visual communication design, ended up more intere
 right now
 
 building     workplot — a tweak app for iOS
-learning     python fundamentals
+learning     something new
 background   visual communication design / SMK grad
 workflow     sketch, build, refine
 ```
 
 ### selected work
 
-- [`luap-snake`](https://github.com/gievano/luap-snake) — Snake in one HTML file, with five visual worlds.
-- [`map-voice`](https://github.com/gievano/map-voice) — A Roblox project where I build and test gameplay systems in Luau.
+- [`WorkPlot`](https://github.com/gievano/WorkPlot)
+- [`Kayara`](https://github.com/gievano/kayara)
 
 <details>
 <summary><strong>stats &amp; activity</strong></summary>
