@@ -19,16 +19,18 @@ Fresh graduate, 18. Started in visual communication design, ended up more intere
 ```text
 right now
 
-building     workplot — a tweak app for iOS
-learning     something new
+building     kayara-anki — an AI japanese tutor inside anki
+learning     japanese, always
 background   visual communication design / SMK grad
 workflow     sketch, build, refine
 ```
 
 ### selected work
 
-- [`WorkPlot`](https://github.com/gievano/WorkPlot)
+- [`kayara-anki`](https://github.com/gievano/kayara-anki)
+- [`metakit`](https://github.com/gievano/metakit)
 - [`Kayara`](https://github.com/gievano/kayara)
+- [`WorkPlot`](https://github.com/gievano/WorkPlot)
 
 <details>
 <summary><strong>stats &amp; activity</strong></summary>
