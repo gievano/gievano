@@ -20,7 +20,7 @@ Fresh graduate, 18. Started in visual communication design, ended up more intere
 right now
 
 building     kayara-anki — an AI japanese tutor inside anki
-learning     japanese, always
+learning     swift / ios internals
 background   visual communication design / SMK grad
 workflow     sketch, build, refine
 ```
