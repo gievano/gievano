@@ -31,6 +31,8 @@ jobs:
           node scripts/mono-language-card.mjs dark dist/languages-dark.svg
 
       - name: Render contribution graph
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if gh api graphql -f query='query { user(login: "gievano") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount contributionLevel } } } } } }' > /tmp/contributions.json; then
             node scripts/contribution-graph.mjs light /tmp/contributions.json dist/contributions.svg
