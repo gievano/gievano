@@ -9,17 +9,18 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=16&amp;duration=2500&amp;pause=600&amp;color=111111&amp;center=true&amp;vCenter=true&amp;random=false&amp;width=600&amp;lines=fresh+grad+%2F+visual+design+to+code;3+years+building+minecraft+servers;small+scripts+and+tools+I+actually+use;visual+design+still+shows+in+the+details" alt="A rotating introduction to Gievano" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=16&amp;duration=2500&amp;pause=600&amp;color=111111&amp;center=true&amp;vCenter=true&amp;random=false&amp;width=600&amp;lines=fresh+grad+%2F+visual+design+to+code;3+years+building+minecraft+servers;shipping+ai+tooling+and+small+utilities;visual+design+still+shows+in+the+details" alt="A rotating introduction to Gievano" />
 </p>
 
 ## hey, i'm gievano.
 
-Fresh graduate, 18. Started in visual communication design, ended up more interested in what's running under the hood. Three years building and managing Minecraft server infrastructure gave me a taste of how things actually work — now I build smaller things for myself, mostly scripts and tools I'd actually use. The design background doesn't disappear; it just leaks into how everything ends up looking.
+Fresh graduate, 18. Started in visual communication design, ended up more interested in what's running under the hood. Three years building and managing Minecraft server infrastructure gave me a taste of how things actually work — now I build smaller things for myself, mostly scripts and tools I'd actually use. Lately that means AI tooling: model routing, an Anki tutor, and digging into iOS internals. The design background doesn't disappear; it just leaks into how everything ends up looking.
 
 ```text
 right now
 
 building     kayara-anki — an AI japanese tutor inside anki
+contributing 9router — free ai coding router, dashboard & backup work
 learning     swift / ios internals
 background   visual communication design / SMK grad
 workflow     sketch, build, refine
@@ -27,10 +28,25 @@ workflow     sketch, build, refine
 
 ### selected work
 
-- [`kayara-anki`](https://github.com/gievano/kayara-anki)
-- [`metakit`](https://github.com/gievano/metakit)
-- [`Kayara`](https://github.com/gievano/kayara)
-- [`WorkPlot`](https://github.com/gievano/WorkPlot)
+- [`9router`](https://github.com/gievano/9router) — free AI coding router, 40+ providers <sub>(fork — dashboard &amp; backup)</sub>
+- [`kayara-anki`](https://github.com/gievano/kayara-anki) — AI japanese tutor inside anki
+- [`metakit`](https://github.com/gievano/metakit) — client-side photo metadata editor
+- [`kayara`](https://github.com/gievano/kayara) — JLPT practice app, N5–N1
+- [`WorkPlot`](https://github.com/gievano/WorkPlot) — on-device iOS Gestalt editor
+
+<details>
+<summary><strong>more work</strong></summary>
+
+- [`map-voice`](https://github.com/gievano/map-voice) — Roblox social hangout in Luau
+- [`luap-snake`](https://github.com/gievano/luap-snake) — single-file snake, five visual worlds
+- [`vellthic`](https://github.com/gievano/vellthic) — personal landing page
+- [`python-learning`](https://github.com/gievano/python-learning) — daily Python journal
+
+</details>
+
+### contact
+
+[`github`](https://github.com/gievano) · [`landing`](https://vellthic.vercel.app)
 
 <details>
 <summary><strong>stats &amp; activity</strong></summary>
