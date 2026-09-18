@@ -78,8 +78,8 @@ workflow     sketch, build, refine
 ### contributions
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gievano&amp;bg_color=0D1117&amp;color=FFFFFF&amp;line=FFFFFF&amp;point=FFFFFF&amp;area_color=FFFFFF&amp;hide_border=true&amp;custom_title=Gievano%27s%20Contribution%20Graph" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=gievano&amp;bg_color=FFFFFF&amp;color=111111&amp;line=111111&amp;point=111111&amp;area_color=111111&amp;hide_border=true&amp;custom_title=Gievano%27s%20Contribution%20Graph" alt="Gievano's contribution graph" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gievano/gievano/output/contributions-dark.svg" />
+  <img src="https://raw.githubusercontent.com/gievano/gievano/output/contributions.svg" alt="Gievano's contribution graph, refreshed daily from GitHub's contribution calendar" />
 </picture>
 
 </details>

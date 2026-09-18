@@ -30,6 +30,15 @@ jobs:
           node scripts/mono-language-card.mjs light dist/languages.svg
           node scripts/mono-language-card.mjs dark dist/languages-dark.svg
 
+      - name: Render contribution graph
+        run: |
+          if gh api graphql -f query='query { user(login: "gievano") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount contributionLevel } } } } } }' > /tmp/contributions.json; then
+            node scripts/contribution-graph.mjs light /tmp/contributions.json dist/contributions.svg
+            node scripts/contribution-graph.mjs dark /tmp/contributions.json dist/contributions-dark.svg
+          else
+            echo "::warning::contribution calendar fetch failed, keeping previous graph"
+          fi
+
       - uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
